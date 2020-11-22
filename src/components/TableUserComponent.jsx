@@ -1,9 +1,9 @@
 import React from "react";
 
 const TableUserComponent = (props) => (
-	<tr>
-		<td>{props.user.name}</td>
-		<td>
+	<tr >
+		<td style={props.styles}>{props.user.name}</td>
+		<td style={props.styles}>
 			<button
 				className="btn btn-warning btn-sm"
 				onClick={() => props.editUser(props.user)}
@@ -11,7 +11,7 @@ const TableUserComponent = (props) => (
 				Editar
 			</button>
 		</td>
-		<td>
+		<td style={props.styles}>
 			<button
 				className="btn btn-danger btn-sm"
 				onClick={() => props.deleteUser(props.user.id)}

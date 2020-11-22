@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ViewFormUserComponent from "./components/ViewFormUserComponent";
-import ViewTableUserComponent from "./components/ViewTableUserComponent";
+import UserFormContainer from "./containers/UserFormContainer";
+import TableUserContainer from "./containers/TableUserContainer";
 
 const App = () => {
 	const [users, setUsers] = useState([]);
@@ -23,9 +23,9 @@ const App = () => {
 
 	return (
 		<section className="bg-dark row align-items-center vh-100 justify-content-center m-0">
-			<div className="col">
+			<div className="col-11 col-sm-11 col-md-8 col-lg-6">
 				{route === "formUser" && (
-					<ViewFormUserComponent
+					<UserFormContainer
 						itemSelected={itemSelected}
 						setUsers={setUsers}
 						setRoute={setRoute}
@@ -37,7 +37,7 @@ const App = () => {
 					/>
 				)}
 				{route === "tableUser" && (
-					<ViewTableUserComponent
+					<TableUserContainer
 						setItemSelected={setItemSelected}
 						users={users}
 						setRoute={setRoute}

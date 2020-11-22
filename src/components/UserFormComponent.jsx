@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormUserComponent = (props) => (
+const UserFormComponent = (props) => (
 	<article className=" p-2">
 		<form onSubmit={props.modeEdition ? props.handleEdit : props.handleSubmit}>
 			<div className="form-group">
@@ -33,4 +33,4 @@ const FormUserComponent = (props) => (
 	</article>
 );
 
-export default FormUserComponent;
+export default UserFormComponent;

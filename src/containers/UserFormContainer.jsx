@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import FormUserComponent from "./FormUserComponent";
+import FormUserComponent from "../components/UserFormComponent";
 import shortid from "shortid";
-import HeaderComponent from "./HeaderComponent";
+import HeaderComponent from "../components/HeaderComponent";
 
-const ViewFormUser = (props) => {
+const UserFormContainer = (props) => {
 	const initialStateForm = { id: null, name: "" };
 	const [inputValues, setInputValues] = useState(initialStateForm);
 
@@ -51,7 +51,7 @@ const ViewFormUser = (props) => {
 	};
 
 	return (
-		<article>
+		<article >
 			<HeaderComponent
 				textH1={props.modeEdition ? "Editar usuarios" : "Agregar usuarios"}
 				textBtn="Lista"
@@ -69,4 +69,4 @@ const ViewFormUser = (props) => {
 	);
 };
 
-export default ViewFormUser;
+export default UserFormContainer;
