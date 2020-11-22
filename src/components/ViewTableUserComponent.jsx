@@ -1,6 +1,6 @@
 import React from "react";
 import TableUserComponent from "./TableUserComponent";
-import TitleTableUserComponent from "./TitleTableUserComponent";
+import HeaderComponent from "./HeaderComponent";
 
 const ViewTableUserComponent = (props) => {
 	const deleteUser = (id) => {
@@ -18,24 +18,32 @@ const ViewTableUserComponent = (props) => {
 
 	return (
 		<article>
-			<TitleTableUserComponent setRoute={props.setRoute} />
-			<table>
-				<thead>
-					<tr>
-						<th>Nombre</th>
-					</tr>
-				</thead>
-				<tbody>
-					{props.users.map((u) => (
-						<TableUserComponent
-							deleteUser={deleteUser}
-							editUser={editUser}
-							user={u}
-							key={u.id}
-						/>
-					))}
-				</tbody>
-			</table>
+			<HeaderComponent
+				textH1="Usuarios"
+				textBtn="Formulario"
+				action={() => props.setRoute("formUser")}
+			/>
+			<div>
+				<table className="table table-dark table-bordered ">
+					<thead>
+						<tr>
+							<th scope="col">Nombre</th>
+							<th scope="col">Editar</th>
+							<th scope="col">Eliminar</th>
+						</tr>
+					</thead>
+					<tbody>
+						{props.users.map((u) => (
+							<TableUserComponent
+								deleteUser={deleteUser}
+								editUser={editUser}
+								user={u}
+								key={u.id}
+							/>
+						))}
+					</tbody>
+				</table>
+			</div>
 		</article>
 	);
 };

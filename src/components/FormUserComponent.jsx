@@ -1,20 +1,33 @@
 import React from "react";
 
 const FormUserComponent = (props) => (
-	<article>
+	<article className=" p-2">
 		<form onSubmit={props.modeEdition ? props.handleEdit : props.handleSubmit}>
-			<input
-				name="name"
-				value={props.inputValues.name}
-				onChange={props.handleChange}
-			/>
-			<input type="submit" value={props.modeEdition ? "Editar" : "Agregar"} />
-			{props.modeEdition && (
+			<div className="form-group">
 				<input
-					type="button"
-					onClick={() => props.cancelEdit()}
-					value="Cancelar"
+					name="name"
+					value={props.inputValues.name}
+					onChange={props.handleChange}
+					className="form-control"
+					placeholder="Nombre"
 				/>
+			</div>
+			{props.modeEdition ? (
+				<>
+					<input
+						className="btn btn-warning mr-2"
+						type="submit"
+						value="Editar"
+					/>
+					<input
+						className="btn btn-danger"
+						type="button"
+						onClick={() => props.cancelEdit()}
+						value="Cancelar"
+					/>
+				</>
+			) : (
+				<input type="submit" className="btn btn-primary" value="Agregar" />
 			)}
 		</form>
 	</article>

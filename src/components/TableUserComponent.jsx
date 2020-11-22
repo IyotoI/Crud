@@ -4,10 +4,20 @@ const TableUserComponent = (props) => (
 	<tr>
 		<td>{props.user.name}</td>
 		<td>
-			<button onClick={() => props.editUser(props.user)}>Editar</button>
+			<button
+				className="btn btn-warning btn-sm"
+				onClick={() => props.editUser(props.user)}
+			>
+				Editar
+			</button>
 		</td>
 		<td>
-			<button onClick={() => props.deleteUser(props.user.id)}>Eliminar</button>
+			<button
+				className="btn btn-danger btn-sm"
+				onClick={() => props.deleteUser(props.user.id)}
+			>
+				Eliminar
+			</button>
 		</td>
 	</tr>
 );

@@ -22,28 +22,30 @@ const App = () => {
 	};
 
 	return (
-		<section>
-			{route === "formUser" && (
-				<ViewFormUserComponent
-					itemSelected={itemSelected}
-					setUsers={setUsers}
-					setRoute={setRoute}
-					addUsers={addUsers}
-					modeEdition={modeEdition}
-					editUser={editUser}
-					setItemSelected={setItemSelected}
-					setModeEdition={setModeEdition}
-				/>
-			)}
-			{route === "tableUser" && (
-				<ViewTableUserComponent
-					setItemSelected={setItemSelected}
-					users={users}
-					setRoute={setRoute}
-					deleteUser={deleteUser}
-					setModeEdition={setModeEdition}
-				/>
-			)}
+		<section className="bg-dark row align-items-center vh-100 justify-content-center m-0">
+			<div className="col">
+				{route === "formUser" && (
+					<ViewFormUserComponent
+						itemSelected={itemSelected}
+						setUsers={setUsers}
+						setRoute={setRoute}
+						addUsers={addUsers}
+						modeEdition={modeEdition}
+						editUser={editUser}
+						setItemSelected={setItemSelected}
+						setModeEdition={setModeEdition}
+					/>
+				)}
+				{route === "tableUser" && (
+					<ViewTableUserComponent
+						setItemSelected={setItemSelected}
+						users={users}
+						setRoute={setRoute}
+						deleteUser={deleteUser}
+						setModeEdition={setModeEdition}
+					/>
+				)}
+			</div>
 		</section>
 	);
 };

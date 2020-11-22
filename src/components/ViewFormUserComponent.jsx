@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FormUserComponent from "./FormUserComponent";
-import TitleFormUser from "./TitleFormUserComponent";
 import shortid from "shortid";
+import HeaderComponent from "./HeaderComponent";
 
 const ViewFormUser = (props) => {
 	const initialStateForm = { id: null, name: "" };
@@ -52,9 +52,10 @@ const ViewFormUser = (props) => {
 
 	return (
 		<article>
-			<TitleFormUser
-				modeEdition={props.modeEdition}
-				setRoute={props.setRoute}
+			<HeaderComponent
+				textH1={props.modeEdition ? "Editar usuarios" : "Agregar usuarios"}
+				textBtn="Lista"
+				action={() => props.setRoute("tableUser")}
 			/>
 			<FormUserComponent
 				handleSubmit={handleSubmit}
